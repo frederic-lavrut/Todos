@@ -1,11 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
 const webpack = require('webpack'); //to access built-in plugins
+const path = require('path');
 
 module.exports = {
-    entry: __dirname + '/src/index.tsx',
+    entry: path.join(__dirname, '/src/index.tsx'),
     output: {
         filename: 'bundle.js',
-        path: __dirname + '/dist'
+        path: path.join(__dirname, '/dist')
     },
 
     plugins: [
@@ -18,17 +19,18 @@ module.exports = {
     devtool: process.env.NODE_ENV !== 'production' ? 'source-map' : null,
 
     devServer: {
-        devServer: {
-            contentBase: __dirname + 'dist',
-            hot: true,
-            open: true,
-            port: 9000
-        }
+        contentBase: path.join(__dirname, '/dist'),
+        hot: true,
+        open: false,
+        port: 80
     },
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ['.ts', '.tsx', '.js', '.json']
+        extensions: ['.ts', '.tsx', '.js', '.json'],
+        alias: {
+            '@': path.join(__dirname, '/src')
+        }
     },
 
     module: {
@@ -47,6 +49,8 @@ module.exports = {
     // dependencies, which allows browsers to cache those libraries between builds.
     externals: {
         'react': 'React',
-        'react-dom': 'ReactDOM'
+        'react-dom': 'ReactDOM',
+        'redux': 'Redux',
+        'react-redux': 'ReactRedux'
     }
 };

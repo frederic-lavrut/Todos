@@ -5,13 +5,16 @@
   "main": "index.js",
   "devDependencies": {
     "@types/jest": "^24.0.6",
-    "@types/react": "^16.8.4",
-    "@types/react-dom": "^16.8.2",
+    "@types/react": "16.8.3",
+    "@types/react-dom": "16.8.3",
+    "@types/react-redux": "^7.0.6",
     "awesome-typescript-loader": "^5.2.1",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.1.0",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
+    "react-redux": "^7.0.1",
+    "redux": "^4.0.1",
     "source-map-loader": "^0.2.4",
     "ts-jest": "^24.0.0",
     "typescript": "^3.3.3333",
@@ -19,10 +22,16 @@
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.0"
   },
+  "resolutions": {
+    "@types/jest": "^24.0.6",
+    "@types/react": "16.8.3",
+    "@types/react-dom": "16.8.3",
+    "@types/react-redux": "^7.0.6"
+  },
   "scripts": {
     "test": "jest",
     "build": "webpack",
-    "start:dev": "webpack-dev-server"
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",

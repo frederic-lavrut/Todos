@@ -1,11 +1,16 @@
 {
     "compilerOptions": {
+        "baseUrl": "./",
         "outDir": "./dist/",
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
         "target": "es5",
-        "jsx": "react"
+        "jsx": "react",
+        "types": ["react", "react-redux", "react-dom", "jest"],
+        "paths": {
+            "@/*": ["src/*"]
+        }
     },
     "include": [
         "./src/**/*"
